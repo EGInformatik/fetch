@@ -1,30 +1,58 @@
 <html lang="en">
 <head>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         
     <meta charset="UTF-8">
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to the Lorem Ipsum overview</h1>
+    <h1 style="text-align: center; font-family: 'Courier New', Courier, monospace;">Welcome to the Lorem Ipsum overview</h1>
 
     <ul 
     x-data="{ users: [] }"
     x-init="users =await( await fetch('https://jsonplaceholder.typicode.com/posts')).json(); console.log(users);"
     >
         <template x-for="(user, index) in users" :key="index";">
-            
-            <div >
+            <div class="outerDiv" style=" height: 400px;
+            width: 600px;
+            margin: 0px auto;
+            padding: 5px;">
+            <div class="leftDiv" style="height: 400px;
+            width: 48%;
+            float: left;">
+            <img height="300px" width="300px" src="https://picsum.photos/800/600?random=1">
+            </div>
+            <div class="rightDiv" style="            height: 400px;
+            width: 48%;
+            float: right;" >
                 <p>
+                    
                   <strong>ID: </strong>
                   <span x-text="user.id"></span><br>
                   <strong>Title: </strong><br>
-                  <span x-text="user.title"></span><br>
-                  <strong>Body: </strong><br>
-                  <span x-text="user.body"></span>
-                </p>
+                  <span>hej med dig</span><br>
+                  <b>Body: </b><br>
+                  <span x-text="user.body"></span><br>
+                  <strong>User ID: </strong>
+                  <span x-text="user.userId"></span><br>
 
+                </p>
+                <i>THIS WAS SIGNED BY THOMAS BLACHMANN</i>
+
+            </div>
+            </div>                <br><br>
+                <hr>
+                <br><br>
         </template>
     </ul>
 
